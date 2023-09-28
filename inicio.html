@@ -40,4 +40,26 @@
     <form action="https://will2023a.github.io/FerasdaConstrucao/processar.php" method="POST">
     
 </body>
+    <div id="popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px; text-align: center; border-radius: 10px; z-index: 999;">
+    <p>Email enviado com sucesso!</p>
+    <button id="ok-button">OK</button>
+</div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Verifique se há um parâmetro "enviado" na URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("enviado")) {
+        // Se o parâmetro "enviado" estiver presente, exiba o popup
+        const popup = document.getElementById("popup");
+        popup.style.display = "block";
+
+        // Defina um evento de clique no botão "OK" do popup para fechá-lo
+        const okButton = document.getElementById("ok-button");
+        okButton.addEventListener("click", function () {
+            popup.style.display = "none";
+        });
+    }
+});
+</script>
+    
 </html>
